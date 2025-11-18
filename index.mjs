@@ -20,16 +20,16 @@ app.get('/viruses', (req, res) => {
 });
 
 // Trojan view
-app.get('/trojans', (req, res) => { // Venus
+app.get('/trojans', (req, res) => {
     res.render("trojans");
 });
 
 // Ransomware view
-app.get('/ransoms', (req, res) => { // Earth
+app.get('/ransoms', (req, res) => {
     res.render("ransoms");
 });
 
-// Vulnerabilities view
+// Vulnerabilities view (GET)
 app.get('/vulns', async(req, res) => {
     // TODO: Modify to utilize the NVD CVE API
 
