@@ -1,0 +1,66 @@
+<%- include("partials/head.ejs") %>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/viruses">Viruses</a>
+        <a href="/trojans">Trojan Horses</a>
+        <a class="active" href="/ransoms">Ransomware</a>
+        <a href="/vulns">Vulnerabilities</a>
+    </nav>
+
+    <br><br>
+
+    <main>
+        <div id="content">
+            <img src="img/wannacry-gui.png" alt="Picture of the WannaCry Decryptor Graphical User Interface (GUI)">
+            <img src="img/wannacry-wallpaper.jpg" alt="Picture of the WannaCry Decryptor Wallpaper">
+            <br>
+            Images Credit: <a href="https://securelist.com/wannacry-ransomware-used-in-widespread-attacks-all-over-the-world/78351"><span class="hobby">WannaCry ransomware used in widespread attacks all over the world (SecureList by Kaspersky)</span></a>
+            <br>
+            Left image is the <abbr title="Graphical User Interface">GUI</abbr> of WannaCry's decryptor, right image is what WannaCry sets the wallpaper to upon activation of its payload.
+
+            <p><strong>In summary,</strong> ransomware is a type of malicious program
+            <br>whose primary purpose is to extort something
+            <br>(money, data, etc) from users of victim machines.</p>
+            <p><strong>Ransomware</strong> is also usually a virus and/or worm, as it uses similar 
+            <br>characteristics in order to spread across the Internet.
+            <p><strong>Below,</strong> I have included a table with some of the most well-known ransomwares.
+            <br>(Sourced from Security Scorecard, link is at the bottom of this page)</p>
+
+            <!-- Table with ransomwares -->
+            <table>
+                <tr id="table-header">
+                    <td><strong>Ransomware Name</strong></td>
+                    <td><strong>Year Seen</strong></td>
+                    <td><strong>Ransomware Description</strong></td>
+                </tr>
+                <tr class="table-row">
+                    <td>WannaCry</td>
+                    <td>2017</td>
+                    <td>An allegedly North Korean worm aimed at extorting
+                    <br>$300 USD worth of Bitcoin (BTC) out of each victim.
+                    <br>Upon activation of the payload, it would encrypt almost 
+                    <br>every file present on the operating system.
+                    <br>Thanks to the EternalBlue vulnerability, WannaCry was
+                    <br>able to infect 230,000 machines in less than a day.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Reveton</td>
+                    <td>2012</td>
+                    <td>This ransomware evolved from the classic law enforcement
+                    <br>scam. What sets Reveton apart from the average scam is
+                    <br>that it first covertly infects systems. Once the payload is
+                    <br>finally activated, it will lock the user out of their system and
+                    <br>display a fradulent message. Sometimes, it will even 
+                    <br>activate the victim's microphone and webcam to scare
+                    <br>into paying "fines" to the "authorities" for "illegal activity."
+                    <br>Unlike WannaCry, this ransomware has been replicated
+                    <br>countless times. Thus, while Reveton was the first to use
+                    <br>ransomware for this kind of scam, it was not the last.</td>
+                </tr>
+            </table>
+    <p></p>
+            <strong>Source for this page:</strong>
+            <a href="https://securityscorecard.com/blog/10-examples-of-recent-and-impactful-ransomware-attacks"><span class="active">10 Ransomware Examples from Recent High-Impact Attacks (Security Scorecard</span></a>
+        </div>
+    </main>
+<%- include("partials/foot.ejs") %>

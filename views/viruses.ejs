@@ -1,0 +1,74 @@
+<%- include("partials/head.ejs") %>
+    <nav>
+        <a href="/">Home</a>
+        <a class="active" href="/viruses">Viruses</a>
+        <a href="/trojans">Trojan Horses</a>
+        <a href="/ransoms">Ransomware</a>
+        <a href="/vulns">Vulnerabilities</a>
+    </nav>
+
+    <br><br>
+
+    <main>
+        <div id="content">
+            <img src="img/virus.jpg" alt="Picture of a computer virus graphic">
+            <img src="img/code-red.png" alt="Picture of the Mountain Dew Code Red beverage">
+            <br>
+            Image Credit: BlueBay2014 / Getty Images, MountainDew.com
+
+            <p><strong>In summary,</strong> computer viruses are a type of malicious program
+            <br>capable of transmitting itself from one machine to the next.</p>
+            <p><strong>There is also a</strong> classification for similiary behaving malware called the worm.
+            <br>Unlike viruses, worms do not need a "host" machine in order to spread.</p>
+            <p><strong>Below,</strong> I have included a table with some of the most well-known viruses and worms.
+            <br>(Sourced from Norton UK, link is at the bottom of this page)</p>
+
+            <!-- Table with viruses -->
+            <table>
+                <tr id="table-header">
+                    <td><strong>Virus/Worm Name</strong></td>
+                    <td><strong>Year Seen</strong></td>
+                    <td><strong>Virus/Worm Description</strong></td>
+                </tr>
+                <tr class="table-row">
+                    <td>ILOVEYOU</td>
+                    <td>2000</td>
+                    <td>ILOVEYOU was a malicious Visual Basic Script (.vbs) that
+                    <br>spread itself via email under the guise of being a love letter.
+                    <br>Upon activation of the payload, it would corrupt files in directories
+                    <br>commonly used for storing personal files in Windows at the time.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Code Red<br>(Fun fact: named after Code Red soft drink!)</td>
+                    <td>2001</td>
+                    <td>Code Red exploited a vulnerability in Microsoft IIS to
+                    <br>rapidly spread across enterprise web servers. On victim
+                    <br>servers, it would display the message "Hacked by Chinese!"
+                    <br>It is estimated that Code Red caused billions in damages.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>MyDoom</td>
+                    <td>2004</td>
+                    <td>Created for the primary purpose of gathering machines
+                    <br>to initiate Distributed Denial of Service (DDoS) attacks
+                    <br>on victims. (botnet) According to Norton, MyDoom is still active 
+                    <br>to this day, racking up an estimated $38 billion in damages.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Stuxnet</td>
+                    <td>2010</td>
+                    <td>A United States sponsored cyberweapon designed to infiltrate
+                    <br>technology connected to the Iranian nuclear program. Its main
+                    <br>method of entry was a USB thumb drive vulnerability. Stuxnet
+                    <br>was able to successfully self-destruct centrifuges, resulting
+                    <br>in significant setbacks to Iran's nuclear plans.</td>
+                </tr>
+            </table>
+            <p>There are other destructive viruses/worms, such as WannaCrypt (aka WannaCry).
+            <br>However, since its main purpose was to extort victims, it is considered
+            <br>ransomware and featured on that page of my site instead.</p>
+            <strong>Source for this page:</strong>
+            <a href="https://uk.norton.com/blog/malware/famous-computer-viruses"><span class="active">Famous computer viruses: A historical look at notable cyberthreats (Norton UK)</span></a>
+        </div>
+    </main>
+<%- include("partials/foot.ejs") %>

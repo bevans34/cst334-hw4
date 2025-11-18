@@ -1,0 +1,92 @@
+body {
+    background-color: #3c3c3c;
+    color: white;
+}
+
+header, main, nav, footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none; /* removes underline */
+}
+
+nav a { /* styles within navigation bar */
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    text-decoration: none; /* removes underline */
+    color: white; /* by default links are blue. lets make it white for more readability on a dark background */
+}
+
+nav a:hover { /* pseudo class */
+    border-bottom: 0px orange solid;
+    font-size: 2em;
+    transition: .9s; /* transition effect */ 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    margin: 0px auto;
+    opacity: 0.8; /* New CSS property not present in Lab 1 */
+}
+
+td {
+    padding-left: 10px; /* New CSS property not present in Lab 1 */
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#table-header {
+    background-color: #351a00;
+    text-align: center;
+}
+
+.table-row {
+    background-color: #753900;
+    text-align: center;
+}
+
+ul {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hobby {
+    color: yellow;
+}
+
+/* Open Sans from fonts.google.com */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/* Make font size smaller and change font color in footer */
+footer {
+    font-size: 0.9em;
+    color: aqua;
+}
+
+/* Add active class to make current page on nav bar stand out (W3schools was helpful for this) */
+.active {
+    color: yellow;
+}
+
+/* Add BonziBUDDY class for making the text a special color */
+.bonzibuddy {
+    color: #ff00ff; /* Fun fact: This is a reference from the original BonziBUDDY website. */
+}
