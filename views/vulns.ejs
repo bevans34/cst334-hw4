@@ -20,16 +20,61 @@
 
             <p><strong>In summary,</strong> a vulnerability is some type of system flaw. They appear in all
             <br>levels of computing, from surface level software, to operating systems, to firmware.
-            <br>The most infamous pieces of malware exploit one or more vulnerabilities to maximize damage.</p>
+            <br>The most infamous pieces of malware exploit one or more vulnerabilities to maximize damage.
+            <br>The "freshest" vulnerabilities are known as zero-days.</p>
             <p><strong>When new vulnerabilties are discovered,</strong> they are added to the National Vulnerability Database (NVD).
             <br>This database is maintained by the National Institute of Standards and Technology, U.S. Department of Commerce.
             <br>Using the power of Web APIs, you can look up information about a vulnerability in this database with just its CVE number!
+            <br>Example: WannaCry exploited the EternalBlue vulnerability, which is stored as CVE-2017-0144
             </p>
-            <!-- This is probably where the form for CVE lookups will go. -->
-            <p>TODO: Add form here!</p>
-            <p></p>
+            <form action="" method="get">
+                CVE Number: <input name="cve" id="cve">
+                <br><submit><button>Submit CVE Number</button></submit>
+            </form>
+            <p id="vulnData"></p>
             <strong>Source for this page:</strong>
             <a href="https://nvd.nist.gov/"><span class="active">National Vulnerability Database</span></a>
         </div>
     </main>
+    <script>
+        <% if (vulnData) { %>
+            <% try { %>
+                document.querySelector("#vulnData").innerHTML = `<%=`
+                    Vulnerability: ${vulnData.vulnerabilities[0].cve.id}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Source Identifier: ${vulnData.vulnerabilities[0].cve.sourceIdentifier}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Published: ${vulnData.vulnerabilities[0].cve.published}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Last Modified: ${vulnData.vulnerabilities[0].cve.lastModified}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Vulnerability Status: ${vulnData.vulnerabilities[0].cve.vulnStatus}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Severity: ${vulnData.vulnerabilities[0].cve.metrics.cvssMetricV31[0].cvssData.baseSeverity}
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    CVSS Score: ${vulnData.vulnerabilities[0].cve.metrics.cvssMetricV31[0].cvssData.baseScore}/10
+                `%>`;
+
+                document.querySelector("#vulnData").innerHTML += `<br><%=`
+                    Description: ${vulnData.vulnerabilities[0].cve.descriptions.find(desc => desc.lang === 'en').value}
+                `%>`;
+
+                console.log(<%- JSON.stringify(vulnData.vulnerabilities[0]); %>);
+            <% } catch (errMsg) { %>
+                This CVE either does not exist or has bad data.<br>Please try a different CVE number.`;
+            <% } %>
+        <% } %>
+    </script>
 <%- include("partials/foot.ejs") %>

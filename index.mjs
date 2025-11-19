@@ -29,17 +29,28 @@ app.get('/ransoms', (req, res) => {
     res.render("ransoms");
 });
 
-// Vulnerabilities view (GET)
+// Vulnerabilities view
 app.get('/vulns', async(req, res) => {
-    // TODO: Modify to utilize the NVD CVE API
+    // If there is no CVE data in the GET request, do not call the NVD API.
+    if (req.query.cve == null) {
+        let vulnData = null;
+        res.render("vulns", {vulnData});
+        return;
+    }
 
-    // let apiKey = "9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD";
-	// let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=2025-11-15`;
-    // let response = await fetch(url);
-    // let vulnData = await response.json();
-    // res.render("vulns", {vulnData});
+    // TODO: Modify to utilize the NVD API
+	let url = `https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=${req.query.cve}`;
+    let response = await fetch(url);
 
-    res.render("vulns");
+    try {
+        let vulnData = await response.json();
+        console.log(vulnData.vulnerabilities[0]);
+        res.render("vulns", {vulnData});
+    } catch (errMsg) {
+        let vulnData = "INVALID";
+        console.log("ERROR! " + errMsg);
+        res.render("vulns", {vulnData, errMsg});
+    }
 });
 
 // Listener
