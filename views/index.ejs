@@ -17,11 +17,12 @@
         <div id="content">
             <br><br>
             <strong>Welcome to the World of Malware!</strong>
-            <br>
             <p>On this website, you can learn about some common types of malware,<br>
             such as Viruses, Worms, Trojan Horses, and Ransomware.</p>
-            <p>NEW: Check out the Vulnerabilities page to learn about exploits that power malware!</p>
-            <p>Click any link in the navigation bar that interests you!</p>               
-        </div>
+            <p>NEW: Check out the Vulnerabilities page to learn about exploits that power malware!</p> 
+        </div>     
     </main>
+    <div style="text-align: center;" id="content">
+        <a class="active" href="https://github.com/jasbirrajrana/generate-quote"><%= quote.getQuote().text; %><br>- <%= quote.getQuote().author; %></a>
+    </div>    
 <%- include("partials/foot.ejs") %>

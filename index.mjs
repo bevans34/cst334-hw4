@@ -2,7 +2,7 @@
 
 import express from 'express';
 import fetch from 'node-fetch';
-// const planets = (await import('npm-solarsystem')).default; // TODO: Import a different package for HW4
+const quote = (await import('generate-quote')); // TODO: Import a different package for HW4
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -11,7 +11,8 @@ app.use(express.static("public"));
 
 // Home view
 app.get('/', async(req, res) => {
-    res.render("index");
+    console.log(quote.getQuote());
+    res.render("index", {quote});
 });
 
 // Planet views

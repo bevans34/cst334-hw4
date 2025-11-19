@@ -11,6 +11,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "generate-quote": "^1.0.6",
     "node-fetch": "^3.3.2"
   }
 }
