@@ -9,28 +9,28 @@ app.use(express.static("public"));
 
 // Routes
 
-// Home view
+// Home
 app.get('/', async(req, res) => {
     console.log(quote.getQuote());
     res.render("index", {quote});
 });
 
-// Planet views
+// Viruses
 app.get('/viruses', (req, res) => {
     res.render("viruses");
 });
 
-// Trojan view
+// Trojans
 app.get('/trojans', (req, res) => {
     res.render("trojans");
 });
 
-// Ransomware view
+// Ransomware
 app.get('/ransoms', (req, res) => {
     res.render("ransoms");
 });
 
-// Vulnerabilities view
+// Vulnerabilities
 app.get('/vulns', async(req, res) => {
     // If there is no CVE data in the GET request, do not call the NVD API.
     if (req.query.cve == null) {
@@ -39,7 +39,7 @@ app.get('/vulns', async(req, res) => {
         return;
     }
 
-    // TODO: Modify to utilize the NVD API
+    // If there is CVE data in the GET request, we can attempt to call the NVD API.
 	let url = `https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=${req.query.cve}`;
     let response = await fetch(url);
 
